@@ -1,0 +1,90 @@
+{
+  "teams" : [
+    "Arsenal",
+    "Aston Villa",
+    "Burnley",
+    "West Brom"
+  ],
+
+  "matches": [
+
+    {
+      "home_team": "Arsenal",
+      "away_team": "West Brom",
+      "first_half": [
+        {
+          "type": "goal",
+          "time": 4,
+          "team": "Arsenal",
+          "player": "T. Walcott"
+        },
+        {
+          "type": "goal",
+          "time": 14,
+          "team": "Arsenal",
+          "player": "T. Walcott"
+        },
+        {
+          "type": "goal",
+          "time": 17,
+          "team": "Arsenal",
+          "player": "J. Wilshere"
+        },
+        {
+          "type": "goal",
+          "time": 37,
+          "team": "Arsenal",
+          "player": "T. Walcott"
+        }
+      ],
+      "second_half": [
+        {
+          "type": "yellowcard",
+          "time": 48,
+          "team": "Arsenal",
+          "player": "H. Bellerin"
+        },
+        {
+          "type": "goal",
+          "time": 57,
+          "team": "West Brom",
+          "player": "G. McAuley"
+        }
+      ]
+    },
+
+    {
+      "home_team": "Aston Villa",
+      "away_team": "Burnley",
+      "first_half": [
+        {
+          "type": "goal",
+          "time": 6,
+          "team": "Burnley",
+          "player": "D. Ings"
+        },
+        {
+          "type": "yellowcard",
+          "time": 29,
+          "team": "Burnley",
+          "player": "F. Ulvestad"
+        }
+      ],
+      "second_half": [
+        {
+          "type": "yellowcard",
+          "time": 53,
+          "team": "Aston Villa",
+          "player": "R. Vlaar"
+        },
+        {
+          "type": "yellowcard",
+          "time": 66,
+          "team": "Burnley",
+          "player": "S. Arfield"
+        }
+      ]
+    }
+  ]
+}
+

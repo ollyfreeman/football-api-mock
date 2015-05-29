@@ -1,0 +1,16 @@
+{
+    "key": "value",
+    "another_key": "Another value.",
+    "a_number_value": 100,
+    "a_list": {
+        "key": "value",
+        "another_key": "Another value.",
+        "a_nested_list": {
+            "key": "value"
+        }
+    },
+    "an_array": [
+        "Item 1",
+        "Item 2"
+    ]
+}

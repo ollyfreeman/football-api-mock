@@ -1,0 +1,59 @@
+# TODO: functional test to make sure that this produces a subset of football-api.json
+
+teams:
+    - &ARS Arsenal
+    - &ASV Aston Villa
+    - &BUR Burnley
+    - &WBR West Brom
+
+matches:
+
+    - home_team: *ARS
+      away_team: *WBR
+      first_half:
+        - type: goal
+          time: 4
+          team: *ARS
+          player: T. Walcott
+        - type: goal
+          time: 14
+          team: *ARS
+          player: T. Walcott
+        - type: goal
+          time: 17
+          team: *ARS
+          player: J. Wilshere
+        - type: goal
+          time: 37
+          team: *ARS
+          player: T. Walcott
+      second_half:
+        - type: yellowcard
+          time: 48
+          team: *ARS
+          player: H. Bellerin
+        - type: goal
+          time: 57
+          team: *WBR
+          player: G. McAuley
+
+    - home_team: *ASV
+      away_team: *BUR
+      first_half:
+        - type: goal
+          time: 6
+          team: *BUR
+          player: D. Ings
+        - type: yellowcard
+          time: 29
+          team: *BUR
+          player: F. Ulvestad
+      second_half:
+        - type: yellowcard
+          time: 53
+          team: *ASV
+          player: R. Vlaar
+        - type: yellowcard
+          time: 66
+          team: *BUR
+          player: S. Arfield
