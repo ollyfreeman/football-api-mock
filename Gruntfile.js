@@ -24,11 +24,22 @@ module.exports = function(grunt) {
 
         nodeunit: {
             all: ['build/test/test-*.js']
+        },
+
+        watch: {
+          scripts: {
+            files: ['**/*.coffee', 'etc/**'],
+            tasks: ['default'],
+            options: {
+              spawn: false,
+            },
+          },
         }
     });
 
     grunt.loadNpmTasks('grunt-coffeelint');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['coffeelint', 'coffee', 'nodeunit']);}
