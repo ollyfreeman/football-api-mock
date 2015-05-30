@@ -1,0 +1,51 @@
+{
+  "matches": [
+    {
+      "match_localteam_name": "Arsenal",
+      "match_visitorteam_name": "West Brom",
+      "match_ht_score": "",
+      "match_ft_score": "",
+      "match_time": "15",
+      "match_localteam_score": "2",
+      "match_visitorteam_score": "0",
+      "match_status": "15",
+      "match_events": [
+        {
+          "event_type": "goal",
+          "event_minute": "0",
+          "event_team": "localteam",
+          "event_player": "T. Walcott",
+          "event_result": "[1 - 0]"
+        },
+        {
+          "event_type": "goal",
+          "event_minute": "14",
+          "event_team": "localteam",
+          "event_player": "T. Walcott",
+          "event_result": "[2 - 0]"
+        }
+      ]
+    },
+    {
+      "match_localteam_name": "Aston Villa",
+      "match_visitorteam_name": "Burnley",
+      "match_ht_score": "",
+      "match_ft_score": "",
+      "match_time": "15",
+      "match_localteam_score": "0",
+      "match_visitorteam_score": "1",
+      "match_status": "15",
+      "match_events": [
+        {
+          "event_type": "goal",
+          "event_minute": "6",
+          "event_team": "visitorteam",
+          "event_player": "D. Ings",
+          "event_result": "[0 - 1]"
+        }
+      ]
+    }
+  ],
+  "ERROR": "OK",
+  "ServerName": "football-api-mock"
+}

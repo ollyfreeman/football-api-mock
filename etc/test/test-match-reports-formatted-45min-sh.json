@@ -3,7 +3,13 @@
     {
       "match_localteam_name": "Arsenal",
       "match_visitorteam_name": "West Brom",
-      "first_half": [
+      "match_ht_score": "[4-0]",
+      "match_ft_score": "",
+      "match_time": "45",
+      "match_localteam_score": "4",
+      "match_visitorteam_score": "0",
+      "match_status": "45",
+      "match_events": [
         {
           "event_type": "goal",
           "event_minute": "0",
@@ -31,29 +37,26 @@
           "event_team": "localteam",
           "event_player": "T. Walcott",
           "event_result": "[4 - 0]"
-        }
-      ],
-      "second_half": [
+        },
         {
           "event_type": "yellowcard",
           "event_minute": "45",
           "event_team": "localteam",
           "event_player": "H. Bellerin",
           "event_result": ""
-        },
-        {
-          "event_type": "goal",
-          "event_minute": "90",
-          "event_team": "visitorteam",
-          "event_player": "G. McAuley",
-          "event_result": "[4 - 1]"
         }
       ]
     },
     {
       "match_localteam_name": "Aston Villa",
       "match_visitorteam_name": "Burnley",
-      "first_half": [
+      "match_ht_score": "[0-1]",
+      "match_ft_score": "",
+      "match_time": "45",
+      "match_localteam_score": "0",
+      "match_visitorteam_score": "1",
+      "match_status": "45",
+      "match_events": [
         {
           "event_type": "goal",
           "event_minute": "6",
@@ -68,23 +71,9 @@
           "event_player": "F. Ulvestad",
           "event_result": ""
         }
-      ],
-      "second_half": [
-        {
-          "event_type": "yellowcard",
-          "event_minute": "53",
-          "event_team": "localteam",
-          "event_player": "R. Vlaar",
-          "event_result": ""
-        },
-        {
-          "event_type": "yellowcard",
-          "event_minute": "66",
-          "event_team": "visitorteam",
-          "event_player": "S. Arfield",
-          "event_result": ""
-        }
       ]
     }
-  ]
+  ],
+  "ERROR": "OK",
+  "ServerName": "football-api-mock"
 }

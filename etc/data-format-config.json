@@ -43,7 +43,8 @@
   	"formatted": "visitorteam"
   },
   "goal": {
-  	"unformatted": "goal"
+  	"unformatted": "goal",
+    "formatted": "goal"
   },
   "first_half": {
   	"formatted": "first_half",
@@ -52,5 +53,26 @@
   "second_half": {
   	"formatted": "second_half",
   	"unformatted": "second_half"
+  },
+  "match_time": {
+    "formatted": "match_time"
+  },
+  "match_home_team_score": {
+    "formatted": "match_localteam_score"
+  },
+  "match_away_team_score": {
+    "formatted": "match_visitorteam_score"
+  },
+  "match_status": {
+    "formatted": "match_status"
+  },
+  "match_events": {
+    "formatted": "match_events"
+  },
+  "error": {
+    "formatted": "ERROR"
+  },
+  "server": {
+    "formatted": "ServerName"
   }
 }

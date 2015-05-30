@@ -12,7 +12,7 @@ matches:
       away_team: *WBR
       first_half:
         - type: goal
-          time: 0
+          time: 4
           team: *ARS
           player: T. Walcott
         - type: goal
@@ -24,16 +24,16 @@ matches:
           team: *ARS
           player: J. Wilshere
         - type: goal
-          time: 45
+          time: 37
           team: *ARS
           player: T. Walcott
       second_half:
         - type: yellowcard
-          time: 45
+          time: 48
           team: *ARS
           player: H. Bellerin
         - type: goal
-          time: 90
+          time: 57
           team: *WBR
           player: G. McAuley
 
@@ -45,7 +45,7 @@ matches:
           team: *BUR
           player: D. Ings
         - type: yellowcard
-          time: 45
+          time: 29
           team: *BUR
           player: F. Ulvestad
       second_half:

@@ -14,7 +14,7 @@
       "first_half": [
         {
           "type": "goal",
-          "time": 4,
+          "time": 0,
           "team": "Arsenal",
           "player": "T. Walcott"
         },
@@ -32,7 +32,7 @@
         },
         {
           "type": "goal",
-          "time": 37,
+          "time": 45,
           "team": "Arsenal",
           "player": "T. Walcott"
         }
@@ -40,13 +40,13 @@
       "second_half": [
         {
           "type": "yellowcard",
-          "time": 48,
+          "time": 45,
           "team": "Arsenal",
           "player": "H. Bellerin"
         },
         {
           "type": "goal",
-          "time": 57,
+          "time": 90,
           "team": "West Brom",
           "player": "G. McAuley"
         }
@@ -65,7 +65,7 @@
         },
         {
           "type": "yellowcard",
-          "time": 29,
+          "time": 45,
           "team": "Burnley",
           "player": "F. Ulvestad"
         }
