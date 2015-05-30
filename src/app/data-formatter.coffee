@@ -1,13 +1,16 @@
 # Format an object with matches data which is an unformatted (imported from YAML) state
 # Uses a config file which provides a mapping from unformatted to formatted keys and values
 exports.format = (unformattedObject, config) ->
-    formattedObject = {}
-    matches = []
-    for unformattedMatch in unformattedObject[config.matches.unformatted]
-        formattedMatch = formatMatch(unformattedMatch, config)
-        matches.push(formattedMatch)
-    formattedObject[config.matches.formatted] = matches
-    return formattedObject
+    try
+        formattedObject = {}
+        matches = []
+        for unformattedMatch in unformattedObject[config.matches.unformatted]
+            formattedMatch = formatMatch(unformattedMatch, config)
+            matches.push(formattedMatch)
+        formattedObject[config.matches.formatted] = matches
+        return formattedObject
+    catch error
+        throw new Error('Error while formatting data object')
 
 # Formats a match from an object from the unformatted (imported from YAML) state
 formatMatch = (unformattedMatch, config) ->
