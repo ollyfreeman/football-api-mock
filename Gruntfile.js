@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             files: ['**/*.coffee', 'etc/**'],
             tasks: ['default'],
             options: {
-              spawn: false,
+              spawn: true,
             },
           },
         }
