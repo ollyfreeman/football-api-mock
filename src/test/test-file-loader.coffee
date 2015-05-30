@@ -39,4 +39,3 @@ exports.loadJSONTest = (test) ->
     test.throws(() ->yamlReader.read("#{testResources}fake.json"))
 
     test.done()
-

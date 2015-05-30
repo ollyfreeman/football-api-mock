@@ -1,14 +1,14 @@
 # Format an object with matches data which is an unformatted (imported from YAML) state
 # Uses a config file which provides a mapping from unformatted to formatted keys and values
-exports.format = (unformattedObject, config) ->
+exports.format = (unformattedData, config) ->
     try
-        formattedObject = {}
+        formattedData = {}
         matches = []
-        for unformattedMatch in unformattedObject[config.matches.unformatted]
+        for unformattedMatch in unformattedData[config.matches.unformatted]
             formattedMatch = formatMatch(unformattedMatch, config)
             matches.push(formattedMatch)
-        formattedObject[config.matches.formatted] = matches
-        return formattedObject
+        formattedData[config.matches.formatted] = matches
+        return formattedData
     catch error
         throw new Error('Error while formatting data object')
 
@@ -19,22 +19,20 @@ formatMatch = (unformattedMatch, config) ->
     formattedMatch[config.match_away_team.formatted] = unformattedMatch[config.match_away_team.unformatted]
 
     goals = {}
-    goals.localteam = 0
-    goals.visitorteam = 0
+    goals[config.home_team.formatted] = 0
+    goals[config.away_team.formatted] = 0
 
     formattedEvents_firstHalf = []
     for unformattedEvent in unformattedMatch[config.first_half.unformatted]
         formattedEvent = formatEvent(unformattedEvent, unformattedMatch, goals, config)
         formattedEvents_firstHalf.push(formattedEvent)
     formattedMatch[config.first_half.formatted] = formattedEvents_firstHalf
-    formattedMatch[config.match_ht_score.formatted] = "[#{goals.localteam}-#{goals.visitorteam}]"
 
     formattedEvents_secondHalf  = []
     for unformattedEvent in unformattedMatch[config.second_half.unformatted]
         formattedEvent = formatEvent(unformattedEvent, unformattedMatch, goals, config)
         formattedEvents_secondHalf.push(formattedEvent)
     formattedMatch[config.second_half.formatted] = formattedEvents_secondHalf
-    formattedMatch[config.match_ft_score.formatted] = "[#{goals.localteam}-#{goals.visitorteam}]"
 
     return formattedMatch
 
