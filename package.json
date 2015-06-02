@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Mock server for the football-api.com API",
   "author": "Olly Freeman",
+  "repository": "https://github.com/ollyfreeman/football-api-mock",
   "devDependencies": {
     "coffeelint": "^1.9.7",
     "grunt": "^0.4.5",
