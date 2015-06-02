@@ -1,13 +1,10 @@
-fs = require('fs')
 fileLoader = require('../../build/app/file-loader')
-dataFormatter = require('../../build/app/data-formatter')
 dataProvider = require('../../build/app/data-provider')
 
 testResources = './etc/test/'
-configFilePath = './etc/data-format-config.json'
+configFilePath = './etc/data-format-config.yaml'
 
-unformattedJSON = fileLoader.loadJSON("#{testResources}test-match-reports-unformatted.json")
-config = fileLoader.loadJSON(configFilePath)
-formattedJSON = dataFormatter.format(unformattedJSON, config)
-providedData = dataProvider.dataAtTime(formattedJSON, 45, config.second_half.formatted, config)
+dfConfig = fileLoader.loadYAML(configFilePath)
+unformattedJSON = fileLoader.loadYAML("#{testResources}match-reports-1.yaml")
+providedData = dataProvider.dataAtTime(unformattedJSON, 0, dfConfig.FIRST_HALF, dfConfig)
 console.log providedData

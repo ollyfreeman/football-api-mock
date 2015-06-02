@@ -1,40 +1,40 @@
 fs = require('fs')
+fileLoader = require('../../build/app/file-loader')
 dataProvider = require('../../build/app/data-provider')
 
-configFilePath = './etc/data-format-config.json'
+configFilePath = './etc/data-format-config.yaml'
 testResources = './etc/test/'
-testMatchReportsAt0mins = './etc/test/test-match-reports-0min.json'
 
 exports.dataAtTimeTest = (test) ->
-    config = JSON.parse(fs.readFileSync(configFilePath, 'utf8'))
-    formattedData = JSON.parse(fs.readFileSync("#{testResources}test-match-reports-formatted.json", 'utf8'))
+    dfConfig = fileLoader.loadYAML(configFilePath)
+    unformattedData = fileLoader.loadYAML("#{testResources}match-reports-1.yaml")
 
     # Test standard functionality
     expected = JSON.parse(fs.readFileSync("#{testResources}test-match-reports-formatted-0min-fh.json", 'utf8'))
-    actual = dataProvider.dataAtTime(formattedData, 0, 'first_half', config)
+    actual = dataProvider.dataAtTime(unformattedData, 0, dfConfig.FIRST_HALF, dfConfig)
     test.deepEqual(actual, expected)
 
     expected = JSON.parse(fs.readFileSync("#{testResources}test-match-reports-formatted-15min-fh.json", 'utf8'))
-    actual = dataProvider.dataAtTime(formattedData, 15, 'first_half', config)
+    actual = dataProvider.dataAtTime(unformattedData, 15, dfConfig.FIRST_HALF, dfConfig)
     test.deepEqual(actual, expected)
 
     expected = JSON.parse(fs.readFileSync("#{testResources}test-match-reports-formatted-45min-fh.json", 'utf8'))
-    actual = dataProvider.dataAtTime(formattedData, 45, 'first_half', config)
+    actual = dataProvider.dataAtTime(unformattedData, 45, dfConfig.FIRST_HALF, dfConfig)
     test.deepEqual(actual, expected)
 
     expected = JSON.parse(fs.readFileSync("#{testResources}test-match-reports-formatted-45min-sh.json", 'utf8'))
-    actual = dataProvider.dataAtTime(formattedData, 45, 'second_half', config)
+    actual = dataProvider.dataAtTime(unformattedData, 45, dfConfig.SECOND_HALF, dfConfig)
     test.deepEqual(actual, expected)
 
     expected = JSON.parse(fs.readFileSync("#{testResources}test-match-reports-formatted-90min-sh.json", 'utf8'))
-    actual = dataProvider.dataAtTime(formattedData, 90, 'second_half', config)
+    actual = dataProvider.dataAtTime(unformattedData, 90, dfConfig.SECOND_HALF, dfConfig)
     test.deepEqual(actual, expected)
 
     # Test that an error is thrown if an invalid input is given
-    test.throws(dataProvider.dataAtTime(formattedData, -1, 'first_half', config))
-    test.throws(dataProvider.dataAtTime(formattedData, 46, 'first_half', config))
-    test.throws(dataProvider.dataAtTime(formattedData, 44, 'second_half', config))
-    test.throws(dataProvider.dataAtTime(formattedData, 91, 'second_half', config))
-    test.throws(dataProvider.dataAtTime(formattedData, 44, 'fake', config))
+    test.throws(() -> dataProvider.dataAtTime(unformattedData, -1, dfConfig.FIRST_HALF, dfConfig))
+    test.throws(() -> dataProvider.dataAtTime(unformattedData, 46, dfConfig.FIRST_HALF, dfConfig))
+    test.throws(() -> dataProvider.dataAtTime(unformattedData, 44, dfConfig.SECOND_HALF, dfConfig))
+    test.throws(() -> dataProvider.dataAtTime(unformattedData, 91, dfConfig.SECOND_HALF, dfConfig))
+    test.throws(() -> dataProvider.dataAtTime(unformattedData, 44, 'fake', dfConfig))
 
     test.done()

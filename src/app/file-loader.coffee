@@ -6,6 +6,7 @@ exports.loadYAML = (filepath) ->
         doc = yaml.safeLoad(fs.readFileSync(filepath, 'utf8'))
         return doc
     catch error
+        console.log error
         throw new Error("Error while loading #{filepath} as YAML")
 
 exports.loadJSON = (filepath) ->
