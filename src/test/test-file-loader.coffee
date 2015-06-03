@@ -1,5 +1,5 @@
 fs = require('fs')
-fileLoader = require('../../build/app/file-loader')
+fileLoader = require('../app/file-loader')
 
 testResources = './etc/test/'
 

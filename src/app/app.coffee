@@ -1,10 +1,14 @@
-fileLoader = require('../../build/app/file-loader')
-dataProvider = require('../../build/app/data-provider')
+express = require('express')
+dataProvider = require('./data-provider')
+fileLoader = require('./file-loader')
 
-testResources = './etc/test/'
-configFilePath = './etc/data-format-config.yaml'
+app = express()
 
-dfConfig = fileLoader.loadYAML(configFilePath)
-unformattedJSON = fileLoader.loadYAML("#{testResources}match-reports-1.yaml")
-providedData = dataProvider.dataAtTime(unformattedJSON, 0, dfConfig.FIRST_HALF, dfConfig)
-console.log providedData
+require('./config')(app)
+require('./routes')('/api/test', app)
+
+module.exports = app
+
+app.listen(app.settings.port, () ->
+    console.log "Example app listening at http://localhost:#{app.settings.port}"
+)

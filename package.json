@@ -15,6 +15,7 @@
     "nodeunit": "^0.9.1"
   },
   "dependencies": {
+    "express": "^4.12.4",
     "js-yaml": "^3.3.1"
   },
   "scripts": {

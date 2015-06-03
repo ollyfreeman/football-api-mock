@@ -3,3 +3,4 @@ build/
 football-api.txt
 .DS_Store
 TODO.txt
+npm-debug.log
