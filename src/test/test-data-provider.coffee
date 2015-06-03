@@ -2,7 +2,7 @@ fs = require('fs')
 fileLoader = require('../app/file-loader')
 dataProvider = require('../app/data-provider')
 
-configFilePath = './etc/data-format-config.yaml'
+configFilePath = './etc/config/data-format.yaml'
 dataFilePath = './etc/test/test-match-reports.yaml'
 testResources = './etc/test/'
 

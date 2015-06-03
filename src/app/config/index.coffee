@@ -1,7 +1,7 @@
 fileLoader = require('../file-loader')
 
-generalConfigFilePath = './etc/general-config.yaml'
-dataConfigFilePath = './etc/data-format-config.yaml'
+generalConfigFilePath = './etc/config/general.yaml'
+dataConfigFilePath = './etc/config/data-format.yaml'
 dataFilePath = './etc/match-reports-1.yaml'
 
 module.exports = (app) ->
