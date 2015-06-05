@@ -1,5 +1,4 @@
-chai = require('chai')
-assert = chai.assert
+assert = require('chai').assert
 
 fs = require('fs')
 fileLoader = require('../app/file-loader')

@@ -1,14 +1,13 @@
-chai = require('chai')
-assert = chai.assert
+assert = require('chai').assert
 
 TokenProvider = require('../app/token-provider')
 
-MULTIPLIER = 12600 # so that token.get(1 * MULTIPLIER) expires in 500ms
+MULTIPLIER = 126000 # so that token.get(1 * MULTIPLIER) expires in 50ms
 
 delay = (ms, func) ->
     setTimeout(func, ms)
 
-describe('Data provider test suite', ->
+describe('Token provider test suite', ->
 
     testDescription =
         'Test getNewToken, isTokenValid, getTokenMultiplier
@@ -79,14 +78,14 @@ describe('Data provider test suite', ->
             assert.equal(actual, expected)
 
         # After this delay, actualTokenId_3, actualTokenId_1 and actualTokenId_5 will have timed out
-        delay 300, () ->
+        delay 30, () ->
             timestamp_6 = Date.now()
             expected = 0
             actual = tokenProvider.getNewToken(10 * MULTIPLIER, timestamp_6)
             assert.equal(actual, expected)
 
         # After this delay, all tokens will have timed out
-        delay 600, () ->
+        delay 60, () ->
             assert.ok(not tokenProvider.isTokenValid(0))
             assert.ok(not tokenProvider.isTokenValid(1))
 

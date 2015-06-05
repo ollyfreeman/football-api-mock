@@ -16,24 +16,46 @@ module.exports = (app, endpoint, tokenProvider) ->
             response.send(responseBody)
         catch error
             response.status(400).send(error.message)
-  )
+    )
 
 responseToActionSnapshot = (app, request) ->
-    return dataProvider.dataAtTime(app, request.query.minute, request.query.half)
+    minute = request.query.minute
+    half = request.query.half
+    throw new Error('Invalid query parameter(s) for snapshot mode') if not (minute and half)
+
+    if not isTimeValid(app, minute, half)
+        throw new Error("#{minute} in #{half} is not a valid time combination")
+
+    return dataProvider.dataAtTime(app, minute, half)
 
 responseToActionStart = (app, request, tokenProvider) ->
-    tokenId = tokenProvider.getNewToken(request.query.matchspeed, Date.now())
+    matchspeed = request.query.matchspeed
+    throw new Error('Invalid query parameter for start mode') if not matchspeed
+
+    tokenId = tokenProvider.getNewToken(matchspeed, Date.now())
     return { tokenId: tokenId }
 
 responseToActionToday = (app, request, tokenProvider) ->
     tokenId = request.query.tokenId
+    throw new Error('Invalid query parameter for today mode') if not tokenId
+
     if tokenProvider.isTokenValid(tokenId)
         multiplier = tokenProvider.getTokenMultiplier(tokenId)
         timestamp = tokenProvider.getTokenTimestamp(tokenId)
         [minute, half] = getMinuteAndHalf(app, timestamp, Date.now(), multiplier)
         responseBody = dataProvider.dataAtTime(app, minute, half)
     else
-        throw new Error('Token is invalid')
+        throw new Error('Invalid token')
+
+# Returns whether minute is a valid minute in half
+# where the first half can be 0-45mins (inclusive), and the second half can be 45-90mins (inclusive)
+isTimeValid = (app, minute, half) ->
+    isFirstHalf = half is app.settings.FIRST_HALF and 0 <= minute <= 45
+    isSecondHalf = half is app.settings.SECOND_HALF and 45 <= minute <= 90
+
+    if not (isFirstHalf or isSecondHalf)
+        return false
+    return true
 
 getMinuteAndHalf = (app, startTimestamp, currentTimestamp, multiplier) ->
     simulationMinutesSinceStart = parseInt(((currentTimestamp - startTimestamp)/(1000.0*60))*multiplier)

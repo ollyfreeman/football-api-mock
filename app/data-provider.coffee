@@ -3,12 +3,10 @@ fileLoader = require('./file-loader')
 # Returns an object that represents the match status at minute in half.
 # The object conforms to the football-api.com API
 exports.dataAtTime = (app, minute, half) ->
+    settings = app.settings
+
     try
         outputData = {}
-        settings = app.settings
-
-        if not isTimeValid(minute, half, settings)
-            throw new Error("#{minute} in #{half} is not a valid time combination")
 
         outputData[settings.matches] = []
         unformattedData = settings.data
@@ -53,16 +51,6 @@ createMatchObject = (unformattedMatch, minute, half, settings) ->
     outputMatch[settings.match_status] = getMatchStatus(minute, half, settings)
 
     return outputMatch
-
-# Returns whether minute is a valid minute in half
-# where the first half can be 0-45mins (inclusive), and the second half can be 45-90mins (inclusive)
-isTimeValid = (minute, half, settings) ->
-    isFirstHalf = half is settings.FIRST_HALF and 0 <= minute <= 45
-    isSecondHalf = half is settings.SECOND_HALF and 45 <= minute <= 90
-
-    if not (isFirstHalf or isSecondHalf)
-        return false
-    return true
 
 # Returns a list of formatted events, created from unformatted events, according to the values
 # of minute, half and goals

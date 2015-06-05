@@ -2,7 +2,7 @@ class TokenProvider
 
     ONE_HUNDRED_AND_FIVE_MINS = 105*60*1000.0
 
-    constructor: ->
+    constructor: () ->
         @tokens = {}
 
     getNewToken : (multiplier, timestamp) ->
