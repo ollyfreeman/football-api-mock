@@ -7,9 +7,13 @@ Mock server for the `football-api.com` API.
 
 Clone the repo, and install with `npm install`.
 
-##Lint, compile and test
+##Lint and test
 
-Running `grunt` will lint all `.coffee` files, compile them to JavaScript and run all unit tests.
+Running `grunt` will lint all `.coffee` files and run all unit tests.
+
+##Run server application
+
+`npm start` will start the node server.
 
 ##Test data
 

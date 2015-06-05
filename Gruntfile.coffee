@@ -5,26 +5,15 @@ module.exports = (grunt) ->
         pkg: grunt.file.readJSON('package.json')
 
         coffeelint: {
-            app: ['src/app/*.coffee', 'src/test/*.coffee'],
+            app: ['./app/*.coffee', './test/*.coffee'],
             options: {
                 configFile: './etc/config/coffeelint.json'
             }
         },
 
-        coffee: {
-            glob_to_multiple: {
-                expand: true,
-                flatten: false,
-                cwd: 'src',
-                src: ['**/*.coffee'],
-                dest: 'build',
-                ext: '.js'
-            }
-        },
-
         mochaTest: {
             test: {
-                src: ['build/test/test-*.js']
+                src: ['./test/test-*.coffee']
             }
         },
 
@@ -40,8 +29,7 @@ module.exports = (grunt) ->
     });
 
     grunt.loadNpmTasks('grunt-coffeelint')
-    grunt.loadNpmTasks('grunt-contrib-coffee')
     grunt.loadNpmTasks('grunt-mocha-test')
     grunt.loadNpmTasks('grunt-contrib-watch')
 
-    grunt.registerTask('default', ['coffeelint', 'coffee', 'mochaTest'])
+    grunt.registerTask('default', ['coffeelint', 'mochaTest'])
