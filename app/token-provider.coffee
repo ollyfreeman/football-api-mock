@@ -1,3 +1,5 @@
+# TokenProvider manages the created and validation of tokens,
+# as well as the retrieval of a valid token
 class TokenProvider
 
     ONE_HUNDRED_AND_FIVE_MINS = 105*60*1000.0
@@ -5,6 +7,9 @@ class TokenProvider
     constructor: () ->
         @tokens = {}
 
+    # Creates a token with id as the lowest value positive integer that is not already a valid token
+    # The created token has multiplier and timestamp associated with it
+    # The created token expires after 105mins of simulated game time, i.e. 105mins/multiplier of real time
     getNewToken : (multiplier, timestamp) ->
         throw new Error('Match-speed is not a number larger than or equal to 1') if not (multiplier >= 1)
         nextTokenId = getNextTokenId(@tokens)
@@ -15,12 +20,15 @@ class TokenProvider
         )(nextTokenId)
         return nextTokenId
 
+    # Returns whether the token with tokenId is valid
     isTokenValid: (tokenId) =>
         @tokens.hasOwnProperty(tokenId)
 
+    # Returns the multiplier associated with tokenId
     getTokenMultiplier: (tokenId) =>
         @tokens[tokenId].multiplier
 
+    # Returns the timestamp associated with tokenId
     getTokenTimestamp: (tokenId) =>
         @tokens[tokenId].timestamp
 

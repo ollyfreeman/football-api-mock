@@ -12,7 +12,6 @@ describe('Token provider test suite', ->
     testDescription =
         'Test getNewToken, isTokenValid, getTokenMultiplier
         and getTokenTimestamp on a single valid token request'
-
     it(testDescription, () ->
         tokenProvider = new TokenProvider
 

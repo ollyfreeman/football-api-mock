@@ -20,6 +20,7 @@ describe('Routes test suite', ->
 
         server = app.listen(portNumber, (err, result) ->
             if err then return done(err)
+
             # get new token provider object
             tokenProvider = new TokenProvider
 
