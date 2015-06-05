@@ -13,7 +13,7 @@ Running `grunt` will lint all `.coffee` files and run all unit tests.
 
 ##Run server application
 
-`npm start` will start the node server.
+Start the node server with `npm start`.
 
 ##Test data
 

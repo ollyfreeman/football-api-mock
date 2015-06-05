@@ -1,32 +1,32 @@
 module.exports = (grunt) ->
 
-    grunt.initConfig({
+    grunt.initConfig {
         # to allow importing data from package.json
         pkg: grunt.file.readJSON('package.json')
 
         coffeelint: {
-            app: ['./app/*.coffee', './test/*.coffee'],
+            app: ['./app/*.coffee', './test/*.coffee']
             options: {
                 configFile: './etc/config/coffeelint.json'
             }
-        },
+        }
 
         mochaTest: {
             test: {
                 src: ['./test/test-*.coffee']
             }
-        },
+        }
 
         watch: {
           scripts: {
-            files: ['**/*.coffee', 'etc/**'],
-            tasks: ['default'],
+            files: ['**/*.coffee', 'etc/**']
+            tasks: ['default']
             options: {
-              spawn: true,
-            },
-          },
+              spawn: true
+            }
+          }
         }
-    });
+    }
 
     grunt.loadNpmTasks('grunt-coffeelint')
     grunt.loadNpmTasks('grunt-mocha-test')
