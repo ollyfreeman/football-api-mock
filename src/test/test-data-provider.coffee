@@ -1,3 +1,7 @@
+require('it-each')({ testPerIteration: true })
+chai = require('chai')
+assert = chai.assert
+
 fs = require('fs')
 fileLoader = require('../app/file-loader')
 dataProvider = require('../app/data-provider')
@@ -6,7 +10,8 @@ configFilePath = './etc/config/data-format.yaml'
 dataFilePath = './etc/test/test-match-reports.yaml'
 testResources = './etc/test/'
 
-exports.dataAtTimeTest = (test) ->
+describe('Data provider test suite', ->
+
     settings = fileLoader.loadYAML(configFilePath)
     unformattedData = fileLoader.loadYAML(dataFilePath)
     app = {}
@@ -22,13 +27,14 @@ exports.dataAtTimeTest = (test) ->
         {   minute: 90, half: settings.SECOND_HALF }
     ]
 
-    for testConfig in testConfigs
+    it.each(testConfigs, 'dataAtTime gives correct data at %s in %s', ['minute', 'half'], (testConfig) ->
         matchReportFile = "test-match-reports-formatted-#{testConfig.minute}min-#{testConfig.half}.json"
-        expected = fileLoader.loadYAML("#{testResources}#{matchReportFile}", 'utf8')
+        expected = fileLoader.loadJSON("#{testResources}#{matchReportFile}", 'utf8')
         actual = dataProvider.dataAtTime(app, testConfig.minute, testConfig.half)
-        test.deepEqual(actual, expected)
+        assert.deepEqual(actual, expected)
+    )
 
-    # Test that an error is thrown if an invalid input is given
+    # Test that correct error messagge is received
     testConfigs = [
         {   minute: -1, half: settings.FIRST_HALF },
         {   minute: 46, half: settings.FIRST_HALF },
@@ -37,10 +43,10 @@ exports.dataAtTimeTest = (test) ->
         {   minute: 44, half: 'fake' },
     ]
 
-    for testConfig in testConfigs
+    it.each(testConfigs, 'dataAtTime gives correct error at %s in %s', ['minute', 'half'], (testConfig) ->
         expectedError = "Error: #{testConfig.minute} in #{testConfig.half} is not a valid time combination"
         expected = { ERROR: expectedError, ServerName: 'Football-API-Mock'}
         actual = dataProvider.dataAtTime(app, testConfig.minute, testConfig.half)
-        test.deepEqual(actual, expected)
-
-    test.done()
+        assert.deepEqual(actual, expected)
+    )
+)

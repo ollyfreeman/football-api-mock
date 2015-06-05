@@ -1,7 +1,8 @@
-module.exports = function(grunt) {
+module.exports = (grunt) ->
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+        # to allow importing data from package.json
+        pkg: grunt.file.readJSON('package.json')
 
         coffeelint: {
             app: ['src/app/*.coffee', 'src/test/*.coffee'],
@@ -11,7 +12,6 @@ module.exports = function(grunt) {
         },
 
         coffee: {
-            // application files
             glob_to_multiple: {
                 expand: true,
                 flatten: false,
@@ -22,8 +22,10 @@ module.exports = function(grunt) {
             }
         },
 
-        nodeunit: {
-            all: ['build/test/test-*.js']
+        mochaTest: {
+            test: {
+                src: ['build/test/test-*.js']
+            }
         },
 
         watch: {
@@ -37,9 +39,9 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-coffeelint');
-    grunt.loadNpmTasks('grunt-contrib-coffee');
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-coffeelint')
+    grunt.loadNpmTasks('grunt-contrib-coffee')
+    grunt.loadNpmTasks('grunt-mocha-test')
+    grunt.loadNpmTasks('grunt-contrib-watch')
 
-    grunt.registerTask('default', ['coffeelint', 'coffee', 'nodeunit']);}
+    grunt.registerTask('default', ['coffeelint', 'coffee', 'mochaTest'])

@@ -1,41 +1,46 @@
+chai = require('chai')
+assert = chai.assert
+
 fs = require('fs')
 fileLoader = require('../app/file-loader')
 
 testResources = './etc/test/'
 
-expected = {
-    key: 'value',
-    another_key: 'Another value.',
-    a_number_value: 100,
-    a_list: {
+
+describe('File loader test suite', ->
+
+    expected = {
         key: 'value',
         another_key: 'Another value.',
-        a_nested_list: {
-            key: 'value'
-        }
-    },
-    an_array: [
-        'Item 1',
-        'Item 2'
-    ]
-}
+        a_number_value: 100,
+        a_list: {
+            key: 'value',
+            another_key: 'Another value.',
+            a_nested_list: {
+                key: 'value'
+            }
+        },
+        an_array: [
+            'Item 1',
+            'Item 2'
+        ]
+    }
 
-exports.loadYAMLTest = (test) ->
-    # Test standard functionality
-    actual = fileLoader.loadYAML("#{testResources}test-file-loader.yaml")
-    test.deepEqual(actual, expected)
+    it("loadYAML should load '#{testResources}test-file-loader.yaml' correctly", () ->
+        actual = fileLoader.loadYAML("#{testResources}test-file-loader.yaml")
+        assert.deepEqual(actual,expected)
+    )
 
-    # Test that an error is thrown if an invalid input is given
-    test.throws(() ->yamlReader.read("#{testResources}fake.yaml"))
+    it("loadYAML should throw and error with input: '#{testResources}fake.yaml'", () ->
+        assert.throws(() -> fileLoader.loadYAML("#{testResources}fake.yaml"))
+    )
 
-    test.done()
+    it("loadJSON should load '#{testResources}test-file-loader.json' correctly", () ->
+        actual = fileLoader.loadJSON("#{testResources}test-file-loader.json")
+        assert.deepEqual(actual,expected)
+    )
 
-exports.loadJSONTest = (test) ->
-    # Test standard functionality
-    actual = fileLoader.loadJSON("#{testResources}test-file-loader.json")
-    test.deepEqual(actual, expected)
-
-    # Test that an error is thrown if an invalid input is given
-    test.throws(() ->yamlReader.read("#{testResources}fake.json"))
-
-    test.done()
+    it("loadJSON should throw and error with input: '#{testResources}fake.json'", () ->
+        assert.throws(() -> fileLoader.loadJSON("#{testResources}fake.json"))
+    )
+)
