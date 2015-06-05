@@ -23,7 +23,8 @@ exports.dataAtTimeTest = (test) ->
     ]
 
     for testConfig in testConfigs
-        expected = fileLoader.loadYAML("#{testResources}test-match-reports-formatted-#{testConfig.minute}min-#{testConfig.half}.json", 'utf8')
+        matchReportFile = "test-match-reports-formatted-#{testConfig.minute}min-#{testConfig.half}.json"
+        expected = fileLoader.loadYAML("#{testResources}#{matchReportFile}", 'utf8')
         actual = dataProvider.dataAtTime(app, testConfig.minute, testConfig.half)
         test.deepEqual(actual, expected)
 
@@ -37,7 +38,8 @@ exports.dataAtTimeTest = (test) ->
     ]
 
     for testConfig in testConfigs
-        expected = { ERROR: "Error: #{testConfig.minute} in #{testConfig.half} is not a valid time combination", ServerName: 'Football-API-Mock'}
+        expectedError = "Error: #{testConfig.minute} in #{testConfig.half} is not a valid time combination"
+        expected = { ERROR: expectedError, ServerName: 'Football-API-Mock'}
         actual = dataProvider.dataAtTime(app, testConfig.minute, testConfig.half)
         test.deepEqual(actual, expected)
 

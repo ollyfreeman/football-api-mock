@@ -6,7 +6,7 @@ class TokenProvider
         @tokens = {}
 
     getNewToken : (multiplier, timestamp) ->
-        throw new Error('Match speed is not a number larger than or equal to 1') if not (multiplier >= 1)
+        throw new Error('Match-speed is not a number larger than or equal to 1') if not (multiplier >= 1)
         nextTokenId = getNextTokenId(@tokens)
         @tokens[nextTokenId] = { multiplier: multiplier, timestamp: timestamp }
         ((nextTokenId) =>

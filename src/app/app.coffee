@@ -1,6 +1,4 @@
 express = require('express')
-dataProvider = require('./data-provider')
-fileLoader = require('./file-loader')
 TokenProvider = require('./token-provider')
 
 app = express()
@@ -12,4 +10,4 @@ require('./routes')(app, '/api/', tokenProvider)
 module.exports = app
 
 app.listen app.settings.port, () ->
-    console.log "Example app listening at http://localhost:#{app.settings.port}"
+    console.log "Listening at http://localhost:#{app.settings.port}"
