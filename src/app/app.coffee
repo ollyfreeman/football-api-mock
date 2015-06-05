@@ -1,19 +1,15 @@
-###express = require('express')
+express = require('express')
 dataProvider = require('./data-provider')
 fileLoader = require('./file-loader')
+TokenProvider = require('./token-provider')
 
 app = express()
+tokenProvider = new TokenProvider
 
 require('./config')(app)
-require('./routes')('/api/', app)
+require('./routes')(app, '/api/', tokenProvider)
 
 module.exports = app
 
 app.listen app.settings.port, () ->
-    console.log "Example app listening at http://localhost:#{app.settings.port}"###
-
-TokenStore = require('../app/token-store')
-MULTIPLIER = 12600
-
-tokenStore = new TokenStore
-actualTokenId = tokenStore.getNewToken(2 * MULTIPLIER, Date.now())
+    console.log "Example app listening at http://localhost:#{app.settings.port}"

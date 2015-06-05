@@ -6,10 +6,10 @@ class TokenProvider
         @tokens = {}
 
     getNewToken : (multiplier, timestamp) ->
-        throw new Error('Multiplier is not larger than or equal to 1') if not (multiplier >= 1)
+        throw new Error('Match speed is not a number larger than or equal to 1') if not (multiplier >= 1)
         nextTokenId = getNextTokenId(@tokens)
         @tokens[nextTokenId] = { multiplier: multiplier, timestamp: timestamp }
-        ((nextTokenId) => # TODO: do i need an IIF here?
+        ((nextTokenId) =>
             delay(ONE_HUNDRED_AND_FIVE_MINS/multiplier, () =>
                 delete @tokens[nextTokenId])
         )(nextTokenId)

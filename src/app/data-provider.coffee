@@ -15,6 +15,7 @@ exports.dataAtTime = (app, minute, half) ->
             outputData[settings.matches].push(outputMatch)
 
         outputData[settings.error] = settings.NO_ERROR
+    #TODO: should this be an error in a 200 response, or a 400 response
     catch error
         outputData[settings.error] = '' + error
     finally
