@@ -58,9 +58,9 @@ getMinuteAndHalf = (app, startTimestamp, currentTimestamp, multiplier) ->
         return [simulationMinutesSinceStart, app.settings.FIRST_HALF]
     else if 45 <= simulationMinutesSinceStart < 60
         return [45, app.settings.FIRST_HALF]
-    else if 60 <= simulationMinutesSinceStart < 90
+    else if 60 <= simulationMinutesSinceStart < 105
         return [simulationMinutesSinceStart - 15, app.settings.SECOND_HALF]
-    else if simulationMinutesSinceStart is 90
+    else if simulationMinutesSinceStart is 105
         return [90, app.settings.SECOND_HALF]
 
 # Returns whether minute is a valid minute in half
