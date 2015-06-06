@@ -1,6 +1,6 @@
 {
   "APIVersion": 1,
-  "APIRequestsRemaining": 995,
+  "APIRequestsRemaining": 997,
   "DeveloperAuthentication": "TRUE",
   "matches": [
     {
@@ -14,8 +14,8 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "81",
+      "match_timer": "81",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9002",
@@ -25,7 +25,7 @@
       "match_visitorteam_name": "West Brom",
       "match_visitorteam_score": "1",
       "match_ht_score": "[4-0]",
-      "match_ft_score": "[4-1]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -101,8 +101,8 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "81",
+      "match_timer": "81",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9008",
@@ -112,7 +112,7 @@
       "match_visitorteam_name": "Burnley",
       "match_visitorteam_score": "1",
       "match_ht_score": "[0-1]",
-      "match_ft_score": "[0-1]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -168,18 +168,18 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "80",
+      "match_timer": "80",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9092",
       "match_localteam_name": "Chelsea",
-      "match_localteam_score": "3",
+      "match_localteam_score": "2",
       "match_visitorteam_id": "9384",
       "match_visitorteam_name": "Sunderland",
       "match_visitorteam_score": "1",
       "match_ht_score": "[1-1]",
-      "match_ft_score": "[3-1]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -231,26 +231,6 @@
           "event_player": "L. Remy",
           "event_player_id": "4572",
           "event_result": "[2 - 1]"
-        },
-        {
-          "event_id": "20012876",
-          "event_match_id": "2001287",
-          "event_type": "yellowcard",
-          "event_minute": "82",
-          "event_team": "localteam",
-          "event_player": "N. Matic",
-          "event_player_id": "35472",
-          "event_result": ""
-        },
-        {
-          "event_id": "20012877",
-          "event_match_id": "2001287",
-          "event_type": "goal",
-          "event_minute": "88",
-          "event_team": "localteam",
-          "event_player": "L. Remy",
-          "event_player_id": "4572",
-          "event_result": "[3 - 1]"
         }
       ]
     },
@@ -265,8 +245,8 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "82",
+      "match_timer": "82",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9127",
@@ -276,7 +256,7 @@
       "match_visitorteam_name": "Swansea",
       "match_visitorteam_score": "0",
       "match_ht_score": "[0-0]",
-      "match_ft_score": "[1-0]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -288,26 +268,6 @@
           "event_player": "M. Chamakh",
           "event_player_id": "1495",
           "event_result": "[1 - 0]"
-        },
-        {
-          "event_id": "20012882",
-          "event_match_id": "2001288",
-          "event_type": "yellowcard",
-          "event_minute": "89",
-          "event_team": "localteam",
-          "event_player": "G. Murray",
-          "event_player_id": "50816",
-          "event_result": ""
-        },
-        {
-          "event_id": "20012883",
-          "event_match_id": "2001288",
-          "event_type": "yellowcard",
-          "event_minute": "90",
-          "event_team": "localteam",
-          "event_player": "B. Hangeland",
-          "event_player_id": "4533",
-          "event_result": ""
         }
       ]
     },
@@ -322,8 +282,8 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "81",
+      "match_timer": "81",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9158",
@@ -333,7 +293,7 @@
       "match_visitorteam_name": "Tottenham",
       "match_visitorteam_score": "1",
       "match_ht_score": "[0-1]",
-      "match_ft_score": "[0-1]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -355,26 +315,6 @@
           "event_player": "B. Stambouli",
           "event_player_id": "138310",
           "event_result": ""
-        },
-        {
-          "event_id": "20012783",
-          "event_match_id": "2001278",
-          "event_type": "yellowcard",
-          "event_minute": "81",
-          "event_team": "localteam",
-          "event_player": "P. Jagielka",
-          "event_player_id": "2600",
-          "event_result": ""
-        },
-        {
-          "event_id": "20012784",
-          "event_match_id": "2001278",
-          "event_type": "yellowcard",
-          "event_minute": "83",
-          "event_team": "visitorteam",
-          "event_player": "R. Mason",
-          "event_player_id": "68627",
-          "event_result": ""
         }
       ]
     },
@@ -389,8 +329,8 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "81",
+      "match_timer": "81",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9221",
@@ -400,7 +340,7 @@
       "match_visitorteam_name": "Manchester United",
       "match_visitorteam_score": "0",
       "match_ht_score": "[0-0]",
-      "match_ft_score": "[0-0]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -422,36 +362,6 @@
           "event_player": "M. Fellaini",
           "event_player_id": "13519",
           "event_result": ""
-        },
-        {
-          "event_id": "20012793",
-          "event_match_id": "2001279",
-          "event_type": "yellowcard",
-          "event_minute": "90",
-          "event_team": "localteam",
-          "event_player": "M. Dawson",
-          "event_player_id": "2932",
-          "event_result": ""
-        },
-        {
-          "event_id": "20012794",
-          "event_match_id": "2001279",
-          "event_type": "yellowcard",
-          "event_minute": "90",
-          "event_team": "visitorteam",
-          "event_player": "C. Smalling",
-          "event_player_id": "79474",
-          "event_result": ""
-        },
-        {
-          "event_id": "20012795",
-          "event_match_id": "2001279",
-          "event_type": "yellowcard",
-          "event_minute": "90",
-          "event_team": "localteam",
-          "event_player": "S. Quinn",
-          "event_player_id": "2609",
-          "event_result": ""
         }
       ]
     },
@@ -466,18 +376,18 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "82",
+      "match_timer": "82",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9240",
       "match_localteam_name": "Leicester",
-      "match_localteam_score": "5",
+      "match_localteam_score": "4",
       "match_visitorteam_id": "9318",
       "match_visitorteam_name": "QPR",
       "match_visitorteam_score": "1",
       "match_ht_score": "[2-0]",
-      "match_ft_score": "[5-1]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -529,16 +439,6 @@
           "event_player": "C. Austin",
           "event_player_id": "99940",
           "event_result": "[4 - 1]"
-        },
-        {
-          "event_id": "20012806",
-          "event_match_id": "2001280",
-          "event_type": "goal",
-          "event_minute": "86",
-          "event_team": "localteam",
-          "event_player": "A. Kramaric",
-          "event_player_id": "83992",
-          "event_result": "[5 - 1]"
         }
       ]
     },
@@ -553,18 +453,18 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "82",
+      "match_timer": "82",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9259",
       "match_localteam_name": "Manchester City",
-      "match_localteam_score": "2",
+      "match_localteam_score": "1",
       "match_visitorteam_id": "9363",
       "match_visitorteam_name": "Southampton",
       "match_visitorteam_score": "0",
       "match_ht_score": "[1-0]",
-      "match_ft_score": "[2-0]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -596,16 +496,6 @@
           "event_player": "F. Lampard",
           "event_player_id": "189",
           "event_result": "[1 - 0]"
-        },
-        {
-          "event_id": "20012814",
-          "event_match_id": "2001281",
-          "event_type": "goal",
-          "event_minute": "88",
-          "event_team": "localteam",
-          "event_player": "S. Aguero",
-          "event_player_id": "3051",
-          "event_result": "[2 - 0]"
         }
       ]
     },
@@ -620,18 +510,18 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "81",
+      "match_timer": "81",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9287",
       "match_localteam_name": "Newcastle Utd",
-      "match_localteam_score": "2",
+      "match_localteam_score": "1",
       "match_visitorteam_id": "9427",
       "match_visitorteam_name": "West Ham",
       "match_visitorteam_score": "0",
       "match_ht_score": "[0-0]",
-      "match_ft_score": "[2-0]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -658,30 +548,10 @@
           "event_id": "20012823",
           "event_match_id": "2001282",
           "event_type": "yellowcard",
-          "event_minute": "80",
+          "event_minute": "81",
           "event_team": "visitorteam",
           "event_player": "M. Amalfitano",
           "event_player_id": "1158",
-          "event_result": ""
-        },
-        {
-          "event_id": "20012824",
-          "event_match_id": "2001282",
-          "event_type": "goal",
-          "event_minute": "85",
-          "event_team": "localteam",
-          "event_player": "J. Gutierrez",
-          "event_player_id": "3206",
-          "event_result": "[2 - 0]"
-        },
-        {
-          "event_id": "20012825",
-          "event_match_id": "2001282",
-          "event_type": "yellowcard",
-          "event_minute": "86",
-          "event_team": "localteam",
-          "event_player": "J. Gutierrez",
-          "event_player_id": "3206",
           "event_result": ""
         }
       ]
@@ -697,18 +567,18 @@
       "match_venue_beta": "",
       "match_venue_id_beta": "0",
       "match_venue_city_beta": "",
-      "match_status": "FT",
-      "match_timer": "",
+      "match_status": "80",
+      "match_timer": "80",
       "match_time": "14:00",
       "match_commentary_available": "epl",
       "match_localteam_id": "9378",
       "match_localteam_name": "Stoke City",
-      "match_localteam_score": "6",
+      "match_localteam_score": "5",
       "match_visitorteam_id": "9249",
       "match_visitorteam_name": "Liverpool",
       "match_visitorteam_score": "1",
       "match_ht_score": "[5-0]",
-      "match_ft_score": "[6-1]",
+      "match_ft_score": "",
       "match_et_score": "",
       "match_events": [
         {
@@ -830,16 +700,6 @@
           "event_player": "E. Pieters",
           "event_player_id": "2487",
           "event_result": ""
-        },
-        {
-          "event_id": "178801413",
-          "event_match_id": "1788014",
-          "event_type": "goal",
-          "event_minute": "86",
-          "event_team": "localteam",
-          "event_player": "P. Crouch",
-          "event_player_id": "191",
-          "event_result": "[6 - 1]"
         }
       ]
     }
@@ -850,7 +710,7 @@
     "APIKey": "e4aeb133-4f5d-9bf6-d406c9036015",
     "comp_id": "1204"
   },
-  "ComputationTime": 0.0048470497131348,
+  "ComputationTime": 0.87750005722046,
   "IP": "50.168.77.16",
   "ERROR": "OK",
   "ServerName": "Football-API",
