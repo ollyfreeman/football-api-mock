@@ -183,7 +183,7 @@ describe('Routes test suite', ->
                 request("http://localhost:#{portNumber}#{apiRoute}?Action=today&tokenId=0", (err, resp, body) ->
                     if(err) then done(err)
                     assert.equal(resp.statusCode, 200)
-                    assert.equal(JSON.parse(resp.body)[app.settings.matches][0][app.settings.match_time], '12')
+                    assert.equal(JSON.parse(resp.body)[app.settings.matches][0][app.settings.match_timer], '12')
                     done()
                 )
             )

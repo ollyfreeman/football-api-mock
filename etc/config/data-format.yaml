@@ -5,7 +5,7 @@ match_home_team_score: match_localteam_score
 match_away_team_score: match_visitorteam_score
 ht_score: match_ht_score
 ft_score: match_ft_score
-match_time: match_time
+match_timer: match_timer
 match_status: match_status
 events: match_events
 type: event_type

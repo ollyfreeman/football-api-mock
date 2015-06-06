@@ -44,7 +44,7 @@ createMatchObject = (unformattedMatch, minute, half, settings) ->
 
     outputMatch[settings.events] = outputEvents
 
-    outputMatch[settings.match_time] = getMatchTime(minute, settings)
+    outputMatch[settings.match_timer] = getMatchTime(minute, settings)
     outputMatch[settings.match_home_team_score] = getHomeTeamScore(goals, settings)
     outputMatch[settings.match_away_team_score] = getAwayTeamScore(goals, settings)
 
