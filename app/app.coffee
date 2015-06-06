@@ -1,4 +1,5 @@
 express = require('express')
+cors = require('cors')
 TokenProvider = require('./token-provider')
 
 # if this file is being run directly
@@ -6,6 +7,7 @@ if not module.parent
 
     # create the app
     app = express()
+    app.use(cors())
 
     # import the configuration
     require('./config')(app)
