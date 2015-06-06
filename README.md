@@ -2,27 +2,27 @@ football-api-mock
 =================
 
 This server is inteded to mock the functionality of the `football-api.com` API, which returns the live status of
-matches that are currently in progress, for a given competition.
+matches that are currently in progress, for a given competition (e.g. the English Premier League).
 
-An API call for the current scores in an EPL match would be:
+An API call to the `football-api.com` API for the current scores in an EPL match would be:
 `http://football-api.com/api/?Action=today&APIKey={my_api_key}&comp_id=1204`.
 
 The mock server will not require authentication, and the competition will always be the EPL (the server returns
-the status of the EPL matches played on Sunday 24th May 2015), so a typical call to the mock server will be:
-`http://mydomain.com/api/?Action=today`. See `etc/football-api.json` for a response that was obtained from this URL
-at 16:40 GMT on Sunday 24th May 2015.
+the status of the EPL matches played on Sunday 24th May 2015 - see `etc/football-api.json` for a response that was obtained from this URL
+at 16:40 GMT on this date), so a typical call to the mock server will be:
+`http://mydomain.com/api/?Action=today`.
 
 However, since the intention is for this mock server to provide the functionality of the `football-api.com` API
-*on demand*, it provides the functionality to specify when the matches start, at at what 'speed' the matches should
-be played - e.g. '1x speed', '10x speed' etc.
+*on demand*, it provides the functionality to control when the simulation of the matches start, at at what 'speed' the matches should
+be simulated - e.g. '1x speed', '10x speed' etc.
 
-In addition to the above functionality, which the mock server will also return the status of the matches at a specified
-time during the matches. The functionality is not present in the `football-api.com` API. A typical call of this type to
+In addition to the above functionality, the mock server will also return the status of the matches at a *specified*
+time during the matches. Note that this functionality is not present in the `football-api.com` API. A typical call of this type to
 the mock server will be:
 `http://mydomain.com/api/?Action=snapshot&minute=32&half=first_half`.
 
 Note: in the simulations, it is assumed that there is no injury time, so the matches occur in lockstep, with exactly
-45 minutes for each half, with exactly 15 minutes for half-time.
+45 minutes for each half, with exactly 15 minutes break for half-time.
 
 ##Requirements
 
@@ -46,7 +46,7 @@ e.g. `http://mydomain.com/api/?Action=start&multiplier=10`
 
 ####Parameters:
 
-`multiplier` - a number that is larger than or equal to 1. For example, a multiplier of `60` will result in a match simulation that
+`multiplier` - a number that is larger than or equal to `1`. For example, a multiplier of `60` will result in a match simulation that
 lasts 105 seconds instead of 105 minutes (where 105 minutes derives from 2 halves of 45 minutes, plus 15 minutes during half-time).
 
 ####Return value:
