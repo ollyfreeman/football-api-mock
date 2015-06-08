@@ -21,8 +21,8 @@ time during the matches. Note that this functionality is not present in the `foo
 the mock server will be:
 `http://mydomain.com/api/?Action=snapshot&minute=32&half=first_half`.
 
-Note: in the simulations, it is assumed that there is no injury time, so the matches occur in lockstep, with exactly
-45 minutes for each half, with exactly 15 minutes break for half-time.
+Note: in the simulations, it is assumed that there is exactly 1 minute of injury time per half, so the matches occur in lockstep, with exactly
+46 minutes for each half, with exactly 15 minutes break for half-time. Therefore, the total length of match is 107 minutes.
 
 ##Requirements
 

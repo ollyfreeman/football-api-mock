@@ -15,7 +15,7 @@ class TokenProvider
         nextTokenId = getNextTokenId(@tokens)
         @tokens[nextTokenId] = { multiplier: multiplier, timestamp: timestamp }
         ((nextTokenId) =>
-            delay(ONE_HUNDRED_AND_FIVE_MINS/multiplier, () =>
+            delay(ONE_HUNDRED_AND_FIVE_MINS/(multiplier*0.9), () =>
                 delete @tokens[nextTokenId])
         )(nextTokenId)
         return nextTokenId

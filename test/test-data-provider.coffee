@@ -17,7 +17,20 @@ describe('Data provider test suite', ->
     app.settings = settings
     app.settings.data = unformattedData
 
-    # Test standard functionality
+    # Test getMatches
+    it('getMatches should return array of matches, listing home and away teams', () ->
+        expectedMatch0 = {}
+        expectedMatch0[settings.home_team] = 'Arsenal'
+        expectedMatch0[settings.away_team] = 'West Brom'
+        expectedMatch1 = {}
+        expectedMatch1[settings.home_team] = 'Aston Villa'
+        expectedMatch1[settings.away_team] = 'Burnley'
+        expected = [ expectedMatch0, expectedMatch1 ]
+        actual = dataProvider.getMatches(app)
+        assert.deepEqual(actual,expected)
+    )
+
+    # Test dataAtTime
     testConfigs = [
         {   minute: 0, half: settings.FIRST_HALF },
         {   minute: 15, half: settings.FIRST_HALF },

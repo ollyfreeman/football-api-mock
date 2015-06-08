@@ -12,6 +12,8 @@ module.exports = (app, endpoint, tokenProvider) ->
                     responseBody = responseToActionToday(app, request, tokenProvider)
                 when 'snapshot'
                     responseBody = responseToActionSnapshot(app, request)
+                when 'matches'
+                    responseBody = responseToActionMatches(app, request)
                 else
                     throw new Error('Action parameter value is not recognised')
             response.send(responseBody)
@@ -50,17 +52,21 @@ responseToActionSnapshot = (app, request) ->
 
     return dataProvider.dataAtTime(app, minute, half)
 
+# Returns the response body to an '/api/?Action=matches' request
+responseToActionMatches = (app) ->
+    return dataProvider.getMatches(app)
+
 # Returns the minute and the half that the match is in, given the start and current timestamps.
-# If the timestamps do not give a valid minute-half combination, and error is thrown.
+# If the timestamps do not give a valid minute-half combination, an error is thrown.
 getMinuteAndHalf = (app, startTimestamp, currentTimestamp, multiplier) ->
     simulationMinutesSinceStart = parseInt(((currentTimestamp - startTimestamp)/(1000*60))*multiplier)
-    if 0 <= simulationMinutesSinceStart < 45
+    if 0 <= simulationMinutesSinceStart <= 45
         return [simulationMinutesSinceStart, app.settings.FIRST_HALF]
-    else if 45 <= simulationMinutesSinceStart < 60
+    else if 46 <= simulationMinutesSinceStart <= 60
         return [45, app.settings.FIRST_HALF]
-    else if 60 <= simulationMinutesSinceStart < 105
-        return [simulationMinutesSinceStart - 15, app.settings.SECOND_HALF]
-    else if simulationMinutesSinceStart is 105
+    else if 61 <= simulationMinutesSinceStart <= 106
+        return [simulationMinutesSinceStart - 16, app.settings.SECOND_HALF]
+    else if 106 >= simulationMinutesSinceStart
         return [90, app.settings.SECOND_HALF]
 
 # Returns whether minute is a valid minute in half

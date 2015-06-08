@@ -1,5 +1,19 @@
 fileLoader = require('./file-loader')
 
+# Returns an object that contains the teams in all matches
+exports.getMatches = (app) ->
+    settings = app.settings
+
+    outputData = []
+    unformattedData = settings.data
+
+    for match in unformattedData.matches
+        outputMatch = {}
+        outputMatch[settings.home_team] = match.home_team
+        outputMatch[settings.away_team] = match.away_team
+        outputData.push(outputMatch)
+    return outputData
+
 # Returns an object that represents the match status at minute in half.
 # The object conforms to the football-api.com API
 exports.dataAtTime = (app, minute, half) ->
@@ -11,8 +25,8 @@ exports.dataAtTime = (app, minute, half) ->
         outputData[settings.matches] = []
         unformattedData = settings.data
 
-        for match in unformattedData.matches
-            outputMatch = createMatchObject(match, minute, half, settings)
+        for unformattedMatch in unformattedData.matches
+            outputMatch = createMatchObject(unformattedMatch, minute, half, settings)
             outputData[settings.matches].push(outputMatch)
 
         outputData[settings.error] = settings.NO_ERROR

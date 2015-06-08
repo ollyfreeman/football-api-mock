@@ -174,12 +174,12 @@ describe('Routes test suite', ->
     )
 
     it("'#{apiRoute}?Action=today&tokenId=0' should return a status of 200 for a valid token", (done) ->
-        multiplier = 60*100
+        multiplier = 60*50
         request("http://localhost:#{portNumber}#{apiRoute}?Action=start&matchspeed=#{multiplier}", (err, resp, body) ->
             if(err) then done(err)
             assert.equal(resp.statusCode, 200)
             assert.equal(resp.body, JSON.stringify({ tokenId: 0 }))
-            delay(121, () ->
+            delay(241, () ->
                 request("http://localhost:#{portNumber}#{apiRoute}?Action=today&tokenId=0", (err, resp, body) ->
                     if(err) then done(err)
                     assert.equal(resp.statusCode, 200)
@@ -187,6 +187,24 @@ describe('Routes test suite', ->
                     done()
                 )
             )
+        )
+    )
+
+    # Test matches action
+    it("'#{apiRoute}?Action=matches' should return a status of 200", (done) ->
+        request("http://localhost:#{portNumber}#{apiRoute}?Action=matches", (err, resp, body) ->
+            if(err) then done(err)
+            assert.equal(resp.statusCode, 200)
+            settings = app.settings
+            expectedMatch0 = {}
+            expectedMatch0[settings.home_team] = 'Arsenal'
+            expectedMatch0[settings.away_team] = 'West Brom'
+            expectedMatch1 = {}
+            expectedMatch1[settings.home_team] = 'Aston Villa'
+            expectedMatch1[settings.away_team] = 'Burnley'
+            expected = JSON.stringify([ expectedMatch0, expectedMatch1 ])
+            assert.deepEqual(resp.body, expected)
+            done()
         )
     )
 
