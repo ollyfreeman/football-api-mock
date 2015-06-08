@@ -55,7 +55,7 @@ describe('Routes test suite', ->
         )
     )
 
-    # Test start action
+    # Test Action=start
     it("'#{apiRoute}?Action=start&#{fakeQueryParam}=2' should return a status of 400", (done) ->
         request("http://localhost:#{portNumber}#{apiRoute}?Action=start&#{fakeQueryParam}=2", (err, resp, body) ->
             if(err) then done(err)
@@ -92,9 +92,9 @@ describe('Routes test suite', ->
         )
     )
 
-    # Test snapshot action
+    # Test Action=snapshot
     it("'#{apiRoute}?Action=snapshot&#{fakeQueryParam}=2&minute=89' should return a status of 400", (done) ->
-        request("http://localhost:#{portNumber}#{apiRoute}?Action=snapshot&#{fakeQueryParam}=2", (err, resp, body) ->
+        request("http://localhost:#{portNumber}#{apiRoute}?Action=snapshot&#{fakeQueryParam}=2&minute=89", (err, resp, body) ->
             if(err) then done(err)
             assert.equal(resp.statusCode, 400)
             assert.equal(resp.body, 'Invalid query parameter(s) for snapshot mode')
@@ -137,7 +137,7 @@ describe('Routes test suite', ->
         )
     )
 
-    # Test today action
+    # Test Action=today
     it("'#{apiRoute}?Action=today&#{fakeQueryParam}=0' should return a status of 400", (done) ->
         request("http://localhost:#{portNumber}#{apiRoute}?Action=today&#{fakeQueryParam}=0", (err, resp, body) ->
             if(err) then done(err)
@@ -190,7 +190,7 @@ describe('Routes test suite', ->
         )
     )
 
-    # Test matches action
+    # Test Action=matches
     it("'#{apiRoute}?Action=matches' should return a status of 200", (done) ->
         request("http://localhost:#{portNumber}#{apiRoute}?Action=matches", (err, resp, body) ->
             if(err) then done(err)
