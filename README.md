@@ -24,10 +24,6 @@ the mock server will be:
 Note: in the simulations, it is assumed that there is exactly 1 minute of injury time per half, so the matches occur in lockstep, with exactly
 46 minutes for each half, with exactly 15 minutes break for half-time. Therefore, the total length of match is 107 minutes.
 
-##Requirements
-
-Install `coffeescript` with `npm install -g coffee-script`
-
 ##Setup
 
 Clone the repo, and install with `npm install`.

@@ -1,10 +1,24 @@
-# TODO: functional test to make sure that this produces a subset of football-api.json
-
 teams:
     - &ARS Arsenal
     - &ASV Aston Villa
     - &BUR Burnley
-    - &WBR West Brom
+    - &CHE Chelsea
+    - &CRY Crystal Palace
+    - &EVR Everton
+    - &HUL Hull City
+    - &LEI Leicester City
+    - &LIV Liverpool
+    - &MAC Man. City
+    - &MAU Man. Utd.
+    - &NEW Newcastle Utd.
+    - &QPR QPR
+    - &SOT Southampton
+    - &STO Stoke City
+    - &SUN Sunderland
+    - &SWA Swansea City
+    - &TOT Tottenham
+    - &WBR West Brom.
+    - &WSH West Ham
 
 matches:
 
@@ -12,7 +26,7 @@ matches:
       away_team: *WBR
       first_half:
         - type: goal
-          time: 0
+          time: 4
           team: *ARS
           player: T. Walcott
         - type: goal
@@ -24,16 +38,16 @@ matches:
           team: *ARS
           player: J. Wilshere
         - type: goal
-          time: 45
+          time: 37
           team: *ARS
           player: T. Walcott
       second_half:
         - type: yellowcard
-          time: 45
+          time: 48
           team: *ARS
           player: H. Bellerin
         - type: goal
-          time: 90
+          time: 57
           team: *WBR
           player: G. McAuley
 
@@ -57,3 +71,227 @@ matches:
           time: 66
           team: *BUR
           player: S. Arfield
+
+    - home_team: *CHE
+      away_team: *SUN
+      first_half:
+        - type: goal
+          time: 26
+          team: *SUN
+          player: S. Fletcher
+        - type: yellowcard
+          time: 32
+          team: *SUN
+          player: J. Rodwell
+        - type: goal
+          time: 37
+          team: *CHE
+          player: D. Costa (pen.)
+        - type: yellowcard
+          time: 37
+          team: *CHE
+          player: J. Cuadrado
+      second_half:
+        - type: goal
+          time: 70
+          team: *CHE
+          player: L. Remy
+        - type: yellowcard
+          time: 82
+          team: *CHE
+          player: N. Matic
+        - type: goal
+          time: 88
+          team: *CHE
+          player: L. Remy
+
+    - home_team: *CRY
+      away_team: *SWA
+      first_half: []
+      second_half:
+        - type: goal
+          time: 57
+          team: *CRY
+          player: M. Chamakh
+        - type: yellowcard
+          time: 89
+          team: *CRY
+          player: G. Murray
+        - type: yellowcard
+          time: 90
+          team: *CRY
+          player: B. Hangeland
+
+    - home_team: *EVR
+      away_team: *TOT
+      first_half:
+        - type: goal
+          time: 24
+          team: *TOT
+          player: H. Kane
+      second_half:
+        - type: yellowcard
+          time: 80
+          team: *TOT
+          player: B. Stambouli
+        - type: yellowcard
+          time: 81
+          team: *EVR
+          player: P. Jagielka
+        - type: yellowcard
+          time: 83
+          team: *TOT
+          player: R. Mason
+
+    - home_team: *HUL
+      away_team: *MAU
+      first_half: []
+      second_half:
+        - type: yellowcard
+          time: 57
+          team: *MAU
+          player: D. Blind
+        - type: redcard
+          time: 77
+          team: *MAU
+          player: M. Fellaini
+        - type: yellowcard
+          time: 77
+          team: *HUL
+          player: M. Dawson
+        - type: yellowcard
+          time: 77
+          team: *MAU
+          player: C. Smalling
+        - type: yellowcard
+          time: 77
+          team: *HUL
+          player: S. Quinn
+
+    - home_team: *LEI
+      away_team: *QPR
+      first_half:
+        - type: goal
+          time: 16
+          team: *LEI
+          player: J. Vardy
+        - type: goal
+          time: 43
+          team: *LEI
+          player: M. Albrighton
+      second_half:
+        - type: goal
+          time: 51
+          team: *LEI
+          player: L. Ulloa
+        - type: goal
+          time: 52
+          team: *LEI
+          player: E. Cambiasso
+        - type: goal
+          time: 57
+          team: *QPR
+          player: C. Austin
+        - type: goal
+          time: 86
+          team: *LEI
+          player: A. Kramaric
+
+    - home_team: *MAC
+      away_team: *SOT
+      first_half:
+        - type: yellowcard
+          time: 2
+          team: *MAC
+          player: M. Demichelis
+        - type: yellowcard
+          time: 25
+          team: *SOT
+          player: S. Long
+        - type: goal
+          time: 31
+          team: *MAC
+          player: F. Lampard
+      second_half:
+        - type: goal
+          time: 88
+          team: *MAC
+          player: S. Aguero
+
+    - home_team: *NEW
+      away_team: *WSH
+      first_half: []
+      second_half:
+        - type: goal
+          time: 54
+          team: *NEW
+          player: M. Sissoko
+        - type: yellowcard
+          time: 54
+          team: *NEW
+          player: M. Sissoko
+        - type: yellowcard
+          time: 80
+          team: *WSH
+          player: M. Amalfitano
+        - type: goal
+          time: 85
+          team: *NEW
+          player: J. Gutierrez
+        - type: yellowcard
+          time: 86
+          team: *NEW
+          player: J. Gutierrez
+
+    - home_team: *STO
+      away_team: *LIV
+      first_half:
+        - type: yellowcard
+          time: 8
+          team: *STO
+          player: yellowcard
+        - type: yellowcard
+          time: 14
+          team: *LIV
+          player: L. Lucas
+        - type: yellowcard
+          time: 16
+          team: *STO
+          player: G. Whelan
+        - type: goal
+          time: 22
+          team: *STO
+          player: M. Diouf
+        - type: goal
+          time: 26
+          team: *STO
+          player: M. Diouf
+        - type: goal
+          time: 30
+          team: *STO
+          player: J. Walters
+        - type: goal
+          time: 41
+          team: *STO
+          player: C. Adam
+        - type: goal
+          time: 45
+          team: *STO
+          player: S. N'Zonzi
+        - type: yellowcard
+          time: 45
+          team: *STO
+          player: R. Shawcross
+      second_half:
+        - type: yellowcard
+          time: 48
+          team: *LIV
+          player: M. Skrtel
+        - type: goal
+          time: 70
+          team: *LIV
+          player: S. Gerrard
+        - type: goal
+          time: 86
+          team: *STO
+          player: P. Crouch

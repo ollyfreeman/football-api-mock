@@ -202,8 +202,8 @@ describe('Routes test suite', ->
             expectedMatch1 = {}
             expectedMatch1[settings.home_team] = 'Aston Villa'
             expectedMatch1[settings.away_team] = 'Burnley'
-            expected = JSON.stringify([ expectedMatch0, expectedMatch1 ])
-            assert.deepEqual(resp.body, expected)
+            assert.deepEqual((JSON.parse(resp.body))[0], expectedMatch0)
+            assert.deepEqual((JSON.parse(resp.body))[1], expectedMatch1)
             done()
         )
     )
